@@ -35,6 +35,7 @@ class CatsController < ApplicationController
   # PATCH/PUT /cats/1
   def update
     if @cat.update(cat_params)
+      flash.now.notice = "猫を更新しました。"
     else
       render :edit, status: :unprocessable_entity
     end
